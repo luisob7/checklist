@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Checklist - Front End</title>
+    <link rel="icon" href="images/icon.png" type="image/png">
+    <style>
+        body {
+            color: #ffffff;
+            background-color: #181818;
+            font-family: Arial;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #1f1f1f;
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #ffffff;
+            width: 60%;
+            text-align: center;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 48px;
+        }
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+        label {
+            font-size: 20px;
+            display: block;
+            margin: 10px 0;
+        }
+        .input-text {
+            font-size: 20px;
+            padding: 10px;
+            width: 80%;
+            margin-bottom: 20px;
+            display: block;
+            margin: auto;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="titulo">Checklist de Revisão de Funcionalidades<br>- Front End -</h1>
+
+        <label for="nome">Task:</label>
+        <input type="text" id="task_nome" name="task_nome" class="input-text"><br>
+
+        <form id="checklistForm">
+            <br><label><input type="checkbox" name="item_1"> <b>1. Ortografia e Gramática:</b> Verificar se todos os textos estão corretos e sem erros de português.</label>
+            <br><label><input type="checkbox" name="item_2"> <b>2. Exibição de Código:</b> Certificar-se de que não aparecem trechos de código na interface.</label>
+            <br><label><input type="checkbox" name="item_3"> <b>3. Responsividade:</b> Testar a interface em diferentes tamanhos de tela (desktop, tablet e mobile).</label>
+            <br><label><input type="checkbox" name="item_4"> <b>4. Funcionalidade:</b> Confirmar que todos os botões, links e interações estão funcionando corretamente.</label>
+            <br><label><input type="checkbox" name="item_5"> <b>5. Consistência Visual:</b> Conferir se cores, fontes e espaçamentos seguem o padrão de design.</label>
+            <br><label><input type="checkbox" name="item_6"> <b>6. Logs e erros no Console:</b> Verificar o console do navegador para identificar e corrigir erros.</label>
+            <br><label><input type="checkbox" name="item_7"> <b>7. Compatibilidade:</b> Testar o funcionamento em navegadores principais (Chrome, Firefox, Edge, Safari).</label>
+            <br><label><input type="checkbox" name="item_8"> <b>8. Performance:</b> Observar se a página carrega rapidamente e sem travamentos.</label>
+            <br><label><input type="checkbox" name="item_9"> <b>9. Validações:</b> Se certificar que os campos obrigatórios são informados ao usuário.</label>
+            <br><label><input type="checkbox" name="item_10"> <b>10. Testes de Regressão:</b> Conferir se as novas funcionalidades não quebraram partes existentes do sistema.</label>
+        </form>
+
+        <br><br><button type="button" onclick="limparChecklist()">Limpar Checklist</button><br><br><br>
+    </div>
+
+    <script>
+        function limparChecklist() {
+            let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => checkbox.checked = false);
+            document.getElementById("task_nome").value = "";
+        }
+    </script>
+
+</body>
+</html>
